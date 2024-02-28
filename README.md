@@ -22,4 +22,12 @@ We used the MERN stack with Material UI to deploy the website and implemented a 
 In the future, users will be able to apply to these opportunities and add their own events/posts. Upon
 completion, users would also be awarded points and badges, to complete the gamification element.
 
+## How to run the program
+
+- Download the files
+- Open up the terminal in the main window
+- Do `npm run build` and wait for the files to install.
+- After the files have been installed, do `npm run start`.
+- The project should be working now! There might be bugs here and there, but it should not be fatal.
+
 Both the source code for the website and the pitch will be within the repo.
