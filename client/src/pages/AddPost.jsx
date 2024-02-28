@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { TextField, Button, Container } from "@mui/material";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
+  const { navigate } = useNavigate();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [requirements, setRequirements] = useState("");
@@ -16,9 +18,8 @@ const AddPost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/feed/posts",
-        {
+      const response = await axios
+        .post("http://localhost:5000/api/feed/posts", {
           title,
           author,
           description,
@@ -29,14 +30,11 @@ const AddPost = () => {
           contactInfo,
           tags,
           location,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
-      console.log("Post added:", response.data);
+        })
+        .then((response) => {
+          console.log(response.data);
+          navigate("/feed");
+        });
     } catch (error) {
       console.error("Error adding post:", error);
     }

@@ -4,6 +4,11 @@ import { Twitter, Facebook, Instagram } from "@mui/icons-material";
 
 import profileImage from "../assets/random/profile.png";
 
+//Badges
+import B1 from "../assets/badges/B1.png";
+import BP from "../assets/badges/BP.png";
+import B5 from "../assets/badges/B5.png";
+
 const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [editedUser, setEditedUser] = useState({
@@ -34,7 +39,7 @@ const Profile = () => {
   };
 
   return (
-    <Box sx={{ marginTop: "7rem" }}>
+    <Box sx={{ marginTop: "7rem", mx: "7rem" }}>
       <Grid container className="profile-container" fontFamily={"Poppins"}>
         <Grid item xs={6} className="left-side">
           <img
@@ -48,7 +53,24 @@ const Profile = () => {
             <Facebook sx={{ fontSize: 30, marginRight: "1rem" }} />
             <Instagram sx={{ fontSize: 30 }} />
           </Box>
-          <Box className="badges">{/* Render badges here */}</Box>
+          <Box
+            sx={{
+              backgroundColor: "#B8C799",
+              px: "3rem",
+              py: "1rem",
+              mx: "2rem",
+              borderRadius: "10px",
+            }}
+          >
+            <Typography variant="h4" color={"white"} fontFamily={"Poppins"}>
+              BADGES
+            </Typography>
+            <Box className="badges">
+              <img src={B1} alt="Badge 1" style={{ width: "50px" }} />
+              <img src={B5} alt="Badge 3" style={{ width: "50px" }} />
+              <img src={BP} alt="Badge 2" style={{ width: "50px" }} />
+            </Box>
+          </Box>
         </Grid>
 
         <Grid item xs={6} className="right-side" textAlign={"left"}>
@@ -57,6 +79,7 @@ const Profile = () => {
               border: "1px solid #ccc",
               backgroundColor: "#f5f5f5",
               padding: "1rem",
+              borderRadius: "10px",
             }}
           >
             {isEditing ? (
@@ -79,6 +102,7 @@ const Profile = () => {
               backgroundColor: "#f5f5f5",
               marginTop: "1rem",
               padding: "1rem",
+              borderRadius: "10px",
             }}
           >
             <Box sx={{ display: "flex" }}>
@@ -161,11 +185,11 @@ const Profile = () => {
           </Box>
           <Box sx={{ display: "flex", justifyContent: "flex-end", mt: 2 }}>
             {isEditing ? (
-              <Button variant="contained" onClick={handleSave}>
+              <Button variant="contained" size="large" onClick={handleSave}>
                 Save
               </Button>
             ) : (
-              <Button variant="contained" onClick={handleEdit}>
+              <Button variant="contained" size="large" onClick={handleEdit}>
                 Edit
               </Button>
             )}

@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import {
   Box,
   Typography,
   Card,
   CardContent,
-  CardMedia,
   Button,
   Pagination,
   Chip,
@@ -15,38 +15,22 @@ import { Link } from "react-router-dom";
 const Feed = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [jobsPerPage] = useState(3);
+  const [jobs, setJobs] = useState([]);
 
-  const jobs = [
-    {
-      id: 1,
-      title: "Volunteer at Animal Shelter",
-      description: "Help take care of animals in need.",
-      image: "animal-shelter.jpg",
-      tags: ["Parks"],
-    },
-    {
-      id: 2,
-      title: "Plant Trees in the Park",
-      description: "Join us in our effort to create a greener environment.",
-      image: "tree-planting.jpg",
-      tags: ["Parks"],
-    },
-    {
-      id: 3,
-      title: "Clean Up the Beach",
-      description: "Contribute to keeping our beaches clean and beautiful.",
-      image: "beach-cleanup.jpg",
-      tags: ["Ocean", "Beaches"],
-    },
-    // Add more jobs here...
-  ];
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await axios.get(
+          "http://localhost:5000/api/feed/posts"
+        );
+        setJobs(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  // Color mapping for tags
-  const tagColors = {
-    Parks: "#4caf50",
-    Ocean: "#2196f3",
-    Beaches: "#ff9800",
-  };
+    fetchJobs();
+  }, []);
 
   // Get current jobs
   const indexOfLastJob = currentPage * jobsPerPage;
@@ -77,37 +61,99 @@ const Feed = () => {
       >
         {currentJobs.map((job) => (
           <Card key={job.id} sx={{ marginBottom: "1rem" }}>
-            <CardMedia
-              component="img"
-              height="140"
-              image={job.image}
-              alt={job.title}
-            />
             <CardContent>
-              <Typography variant="h3" fontFamily={"inherit"}>
+              <Typography
+                variant="h4"
+                fontFamily={"inherit"}
+                textAlign={"left"}
+              >
                 {job.title}
               </Typography>
-              <Typography variant="body1" fontFamily={"inherit"}>
-                {job.description}
-              </Typography>
-            </CardContent>
-            <CardContent>
-              <Box
-                sx={{ display: "flex", gap: "0.5rem", marginBottom: "0.5rem" }}
+              <Typography
+                variant="body1"
+                fontFamily={"inherit"}
+                textAlign={"left"}
               >
+                <strong>Author:</strong> {job.author}
+              </Typography>
+              <Typography
+                variant="body1"
+                fontFamily={"inherit"}
+                textAlign={"left"}
+              >
+                <h4>Description:</h4> {job.description}
+              </Typography>
+              <Typography
+                textAlign={"left"}
+                variant="body1"
+                fontFamily={"inherit"}
+              >
+                <h4>Requirements:</h4>
+                <ul>
+                  {job.requirements.map((requirement) => (
+                    <li key={requirement}>{requirement}</li>
+                  ))}
+                </ul>
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Age: </strong>
+                {job.age}
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Contact Info:</strong> {job.contactInfo}
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Tags:</strong>{" "}
                 {job.tags.map((tag) => (
                   <Chip
                     key={tag}
                     label={tag}
                     variant="outlined"
                     style={{
-                      backgroundColor: tagColors[tag],
+                      backgroundColor: "black",
                       color: "white",
                       fontFamily: "Poppins",
                     }}
                   />
                 ))}
-              </Box>
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Date: </strong>
+                {new Date(job.date).toLocaleDateString("en-GB")}
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Location:</strong>L {job.location}
+              </Typography>
+              <Typography
+                variant="body1"
+                textAlign={"left"}
+                fontFamily={"inherit"}
+              >
+                <strong>Created At:</strong>{" "}
+                {new Date(job.createdAt).toLocaleString("en-GB")}
+              </Typography>
+            </CardContent>
+            <CardContent>
               <Button variant="contained" color="primary">
                 Apply
               </Button>

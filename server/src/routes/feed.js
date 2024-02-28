@@ -24,17 +24,20 @@ router.post("/posts", async (req, res) => {
       tags,
       location,
     } = req.body;
-    const post = new Post(
+
+    let separatedRequirements = requirements.split(",");
+    let separatedTags = tags.split("," || ", ");
+    let post = new Post({
       title,
       author,
       description,
-      requirements.split("," || ", "),
+      requirements: separatedRequirements,
       date,
       age,
       contactInfo,
-      tags.split("," || ", "),
-      location
-    );
+      tags: separatedTags,
+      location,
+    });
     await post.save();
     res.status(201).send(post);
   } catch (error) {

@@ -27,7 +27,10 @@ const LandingPage = () => {
             <Typography
               variant="h4"
               align="right"
-              sx={{ fontSize: "2rem", fontFamily: "Poppins" }}
+              sx={{
+                fontSize: { lg: "2rem", xs: "1rem" },
+                fontFamily: "Poppins",
+              }}
               className="animate__animated animate__fadeInRight"
             >
               Building a better future, one volunteer at a time.
@@ -112,26 +115,43 @@ const LandingPage = () => {
           </Typography>
           <Accordion sx={{ marginTop: "1rem" }}>
             <AccordionSummary>
-              <Typography variant="h6">Question 1</Typography>
+              <Typography variant="h6">
+                Q. How much of my information will organisations be able to see?
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>Answer 1</Typography>
+              <Typography textAlign={"left"}>
+                rivacy is important to us! Organisations will only be able to
+                see your name and email to contact you. Other information is
+                hidden from them and we automatically check your eligibility for
+                the role based on your details!
+              </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion sx={{ marginTop: "1rem" }}>
             <AccordionSummary>
-              <Typography variant="h6">Question 2</Typography>
+              <Typography variant="h6">Q. Is NatureNetwork free?</Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>Answer 2</Typography>
+              <Typography textAlign={"left"}>
+                Yes! We are entirely committed to keeping this service free so
+                everyone can work to clean up the environment.
+              </Typography>
             </AccordionDetails>
           </Accordion>
           <Accordion sx={{ marginTop: "1rem" }}>
             <AccordionSummary>
-              <Typography variant="h6">Question 3</Typography>
+              <Typography variant="h6">
+                Q. Will I be able to find projects near me?
+              </Typography>
             </AccordionSummary>
             <AccordionDetails>
-              <Typography>Answer 3</Typography>
+              <Typography textAlign={"left"}>
+                Of course! We are currently in the process of increasing our
+                partner organisations globally, meaning that everyone will be
+                able to find a local opportunity, whether you live in a city, by
+                the sea or in a small village.
+              </Typography>
             </AccordionDetails>
           </Accordion>
         </Container>
