@@ -32,5 +32,5 @@ completion, users would also be awarded points and badges, to complete the gamif
 
 ## Videos
 
-**Pitch**: [Click here](https://youtu.be/PGvPfGxnmSk) to view the pitch.
-**App Showcase**: [Click here](https://youtu.be/bz1YtNSWGNM) to view the app showcase.
+- **Pitch**: [Click here](https://youtu.be/PGvPfGxnmSk) to view the pitch.
+- **App Showcase**: [Click here](https://youtu.be/bz1YtNSWGNM) to view the app showcase.
