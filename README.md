@@ -30,4 +30,7 @@ completion, users would also be awarded points and badges, to complete the gamif
 - After the files have been installed, do `npm run start`.
 - The project should be working now! There might be bugs here and there, but it should not be fatal.
 
-Both the source code for the website and the pitch will be within the repo.
+## Videos
+
+**Pitch**: [Click here](https://youtu.be/PGvPfGxnmSk) to view the pitch.
+**App Showcase**: [Click here](https://youtu.be/bz1YtNSWGNM) to view the app showcase.
