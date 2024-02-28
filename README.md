@@ -18,14 +18,8 @@ that the user has gotten, such as their first volunteering task, or maybe their 
 can pick and choose whatever activities they would like to do, and those who would like to post events can do
 so to gain volunteers.
 
-We used the **MERN (MongoDB, Express, React, Node.js)** stack with **Material UI** to deploy the website and implemented a dynamic feed with Pagination.
+We used the MERN stack with Material UI to deploy the website and implemented a dynamic feed with Pagination.
 In the future, users will be able to apply to these opportunities and add their own events/posts. Upon
 completion, users would also be awarded points and badges, to complete the gamification element.
-
-## How to run the program
-
-- After downloading the files, open your terminal on the main folder and do `npm run build`.
-- After installing all the files, do `npm run start` to start the server and the client.
-- That should be all! The web application should work properly. There might be glitches here and there, but they shouldn't be fatal.
 
 Both the source code for the website and the pitch will be within the repo.
