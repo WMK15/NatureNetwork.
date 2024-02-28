@@ -1,0 +1,16 @@
+{
+  "name": "fyh_naturenetwork",
+  "version": "1.0.0",
+  "description": "Volunteering Matchmaking Platform",
+  "main": "index.js",
+  "scripts": {
+    "backend": "cd server && npm start",
+    "frontend": "cd client && npm start",
+    "start": "concurrently \"npm run backend\" \"npm run frontend\""
+  },
+  "author": "Waseef Khan, Darren Weston, Jennifer Ikin, Mark Tran",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
