@@ -4,6 +4,9 @@
   "description": "Volunteering Matchmaking Platform",
   "main": "index.js",
   "scripts": {
+    "build": "npm install & npm run clientbuild & npm run serverbuild",
+    "clientbuild": "cd client && npm install",
+    "serverbuild": "cd server && npm install",
     "backend": "cd server && npm start",
     "frontend": "cd client && npm start",
     "start": "concurrently \"npm run backend\" \"npm run frontend\""
