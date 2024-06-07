@@ -24,8 +24,8 @@ completion, users would also be awarded points and badges, to complete the gamif
 
 ## How to run the program
 
-- Download the files
-- Open up the terminal in the main window
+- Clone the repository
+- Open up the terminal in the main folder
 - Do `npm run build` and wait for the files to install.
 - After the files have been installed, do `npm run start`.
 - The project should be working now! There might be bugs here and there, but it should not be fatal.
