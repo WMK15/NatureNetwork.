@@ -10,7 +10,7 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
 ![MUI](https://img.shields.io/badge/MUI-%230081CB.svg?style=for-the-badge&logo=mui&logoColor=white)
 
-This is a submission for **FirstYearHack 2024**, a hackathon hosted by KCL Tech. This fulfils Project 15: Volunteer Matchmaking Platform for Environmental Projects
+This is the winning submission for **FirstYearHack 2024**, a hackathon hosted by KCL Tech. This fulfils Project 15: Volunteer Matchmaking Platform for Environmental Projects
 
 ## Members of the group:
 
